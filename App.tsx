@@ -1,4 +1,5 @@
 import Header from './components/shared/Header.component';
+import Login from './components/login/Login.page';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -14,17 +15,6 @@ function Home(props) {
     <Text>Home Page ...</Text>
     <TouchableOpacity onPress={()=> navigation.navigate("Login")}>
       <Text>Go login...</Text>
-    </TouchableOpacity>
-  </View>
-}
-
-function Login(props) {
-  const { navigation } = props;
-
-  return <View style={styles.innerContainer}>
-    <Text>Login page...</Text>
-    <TouchableOpacity onPress={()=> navigation.navigate("Home")}>
-      <Text>Go home...</Text>
     </TouchableOpacity>
   </View>
 }
