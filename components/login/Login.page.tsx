@@ -6,16 +6,14 @@ import {
 } from "react-native";
 
 import Subheader from "./Subheader.component";
+import LoginForm from "./Login.form";
 
 export default function Login(props) {
     const { navigation } = props;
   
     return <View style={styles.innerContainer}>
         <Subheader />
-        <Text>Login page...</Text>
-        <TouchableOpacity onPress={()=> navigation.navigate("Home")}>
-            <Text>Go home...</Text>
-        </TouchableOpacity>
+        <LoginForm navigation={props.navigation}/>
     </View>
   }
 
