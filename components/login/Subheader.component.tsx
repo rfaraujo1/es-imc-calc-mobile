@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 export default function Subheader(props: any) {
-    return (<View styles={styles.container}>
+    return (<View style={styles.container}>
         <Text style={styles.primary}>Seja bem vindo!</Text>
         <Text style={styles.secondary}>Faça seu login para continuar...</Text>
     </View>);
