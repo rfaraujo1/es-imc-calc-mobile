@@ -1,5 +1,7 @@
 import Header from './components/shared/Header.component';
 import Login from './components/login/Login.page';
+import Register from './components/register/Register.page';
+
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -35,6 +37,7 @@ export default function App() {
             }}>
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Register" component={Register} />
           </Stack.Navigator>
         </NavigationContainer>
         <StatusBar style="auto" />

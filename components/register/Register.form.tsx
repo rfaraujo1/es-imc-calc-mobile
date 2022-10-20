@@ -1,45 +1,40 @@
 import React from "react"
 import { Dimensions, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
-export default function LoginForm(props: any) {
+export default function RegisterForm(props: any) {
     return <View style={styles.container}>
         <View style={styles.fields}>
-            <View style={styles.filler}></View>
+            <Text style={styles.accountTitle}>
+                    Cadastro do login
+                </Text>
             <TextInput
                 style={styles.input}
-                placeholder='nome de usuário'
+                placeholder='Digite o email'
                 autoCapitalize="none"
                 allowFontScaling={true}
                 secureTextEntry={false} />
             <TextInput
                 style={styles.input}
-                placeholder='senha'
+                placeholder='Digite a senha'
                 autoCapitalize="none"
                 allowFontScaling={true}
                 secureTextEntry={true} />
-            <TouchableOpacity
-                style={styles.forgetPasswordLink}
-                onPress={() => alert('Esqueci a senha!')}
-            >
-                <Text style={styles.accountActionText}>
-                    Esqueci a senha
-                </Text>
-            </TouchableOpacity>
+            
             <View style={styles.filler}></View>
         </View>
         <View style={styles.actions}>
             <TouchableOpacity
-                style={styles.btnLogin}
+                style={styles.btnRegister}
                 onPress={() => props.navigation.navigate("Home")}
             >
-                <Text style={styles.btnLoginText}>Entrar</Text>
+                <Text style={styles.btnRegisterText}>Cadastrar</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.createAccountLink}
-                onPress={() => props.navigation.navigate("Register")}
+                onPress={() => props.navigation.navigate("Login")}
             >
                 <Text style={styles.accountActionText}>
-                    Criar minha conta
+                    Já tenho uma conta!
                 </Text>
             </TouchableOpacity>
         </View>
@@ -80,8 +75,16 @@ const styles = StyleSheet.create({
         flex: 1,
         marginTop: 5,
     },
+    accountTitle: {
+      color: "#000",
+      textAlign: "center",
+        marginTop: 20,
+        fontSize: 24
+    },
     accountActionText: {
-        color: "#00A6FF"
+        color: "#00A6FF",
+        textAlign: "center",
+        marginTop: 20
     },
     actions: {
         flex: 2,
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         justifyContent: "flex-start"
     },
-    btnLogin: {
+    btnRegister: {
         backgroundColor: "#42B0BF",
         width: Dimensions.get('screen').width * 0.9,
         height: Dimensions.get('screen').height * 0.08,
@@ -97,7 +100,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    btnLoginText: {
+    btnRegisterText: {
         color: "#fff",
         fontSize: 16
     }
